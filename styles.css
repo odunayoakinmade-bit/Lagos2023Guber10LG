@@ -1,0 +1,102 @@
+
+:root{
+  --bg:#07111f;
+  --surface:#0f1b2f;
+  --surface-2:#13233d;
+  --border:#233455;
+  --text:#eef4ff;
+  --muted:#aab8d6;
+  --apc:#2fb36f;
+  --lp:#e04747;
+  --pdp:#4aa3ff;
+  --winner:#b689ff;
+  --gold:#ffd37a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:radial-gradient(circle at top right,#12284a 0%, #07111f 55%);
+  color:var(--text);
+}
+.shell{max-width:1520px;margin:0 auto;padding:24px}
+.hero,.card{
+  background:rgba(15,27,47,.96);
+  border:1px solid var(--border);
+  box-shadow:0 18px 40px rgba(0,0,0,.22);
+}
+.hero{
+  border-radius:24px;
+  padding:24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+  margin-bottom:18px;
+}
+.eyebrow{margin:0 0 8px 0;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}
+h1,h2,h3{margin:0 0 8px 0}
+.subtle{margin:0;color:var(--muted)}
+.segmented{display:flex;flex-wrap:wrap;gap:8px}
+.segmented button{
+  padding:10px 14px;border-radius:999px;border:1px solid var(--border);background:#122340;color:var(--text);cursor:pointer
+}
+.segmented button.active{outline:2px solid rgba(255,255,255,.15);background:#1a315a}
+.kpis{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:14px;
+  margin-bottom:18px;
+}
+.kpi{
+  background:rgba(15,27,47,.9);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+}
+.kpi .label{color:var(--muted);font-size:.82rem;margin-bottom:8px}
+.kpi .value{font-size:1.7rem;font-weight:700}
+.grid-two{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-bottom:18px}
+.card{border-radius:22px;padding:18px}
+.card-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:14px}
+.legend{display:flex;gap:8px;flex-wrap:wrap}
+.legend .pill,.chip{
+  display:inline-block;padding:6px 10px;border-radius:999px;font-size:.78rem;border:1px solid var(--border);background:#152748
+}
+.map-wrap{position:relative;background:linear-gradient(180deg,#0b1425 0%, #0e1a31 100%);border:1px solid rgba(255,255,255,.06);border-radius:18px;overflow:hidden;min-height:520px}
+#map-svg{width:100%;height:auto;display:block}
+.tooltip{
+  position:absolute;pointer-events:none;min-width:220px;max-width:280px;padding:12px 14px;border-radius:14px;
+  background:rgba(9,15,27,.96);border:1px solid var(--border);color:var(--text);font-size:.86rem;line-height:1.4;
+  box-shadow:0 12px 24px rgba(0,0,0,.28)
+}
+.hidden{display:none}
+.finding-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.finding{
+  background:var(--surface-2);border:1px solid var(--border);border-radius:16px;padding:14px;color:var(--muted)
+}
+.divider{height:1px;background:rgba(255,255,255,.06);margin:16px 0}
+.mini-panels{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini-panel{background:var(--surface-2);border:1px solid var(--border);border-radius:16px;padding:14px}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+select,input{
+  background:#0d1930;color:var(--text);border:1px solid var(--border);border-radius:12px;padding:10px 12px;min-width:180px
+}
+.table-scroll{overflow:auto}
+.table-scroll.short{max-height:350px}
+.table-scroll.tall{max-height:520px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,.06);text-align:left;font-size:.9rem}
+th{color:#dce6ff;position:sticky;top:0;background:#12203a}
+td{color:var(--muted)}
+.row-strong{color:var(--text);font-weight:600}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid var(--border);font-size:.78rem}
+.badge.apc{background:rgba(47,179,111,.14);color:#97e0b6}
+.badge.lp{background:rgba(224,71,71,.14);color:#ffb0b0}
+.badge.pdp{background:rgba(74,163,255,.14);color:#abd7ff}
+.badge.winner{background:rgba(182,137,255,.14);color:#dbc2ff}
+.footer{display:flex;justify-content:space-between;color:var(--muted);padding:8px 4px 0;font-size:.86rem}
+@media (max-width:1150px){
+  .grid-two,.mini-panels,.finding-grid{grid-template-columns:1fr}
+  .hero{flex-direction:column}
+}

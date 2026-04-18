@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lagos 2027 Premium Campaign Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Premium Static Dashboard</p>
+        <h1>Lagos 2027 Campaign Organisation Dashboard</h1>
+        <p id="scope-note" class="subtle"></p>
+      </div>
+      <div class="hero-controls">
+        <div class="segmented" id="party-switch">
+          <button class="active" data-party="winner">Winner View</button>
+          <button data-party="APC">APC View</button>
+          <button data-party="LP">LP View</button>
+          <button data-party="PDP">PDP View</button>
+        </div>
+      </div>
+    </header>
+
+    <section id="kpis" class="kpis"></section>
+
+    <section class="grid-two">
+      <article class="card map-card">
+        <div class="card-head">
+          <div>
+            <h2>Strategic campaign map</h2>
+            <p class="subtle">Click an LGA bubble or ward cluster to update the drilldown view.</p>
+          </div>
+          <div id="map-legend" class="legend"></div>
+        </div>
+        <div class="map-wrap">
+          <svg id="map-svg" viewBox="0 0 1000 520" aria-label="Strategic map"></svg>
+          <div id="map-tooltip" class="tooltip hidden"></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h2>Operational reading</h2>
+            <p class="subtle">Use these as management talking points and field guidance.</p>
+          </div>
+        </div>
+        <div id="findings" class="finding-grid"></div>
+        <div class="divider"></div>
+        <div class="mini-panels">
+          <div class="mini-panel">
+            <h3>Top opportunity wards</h3>
+            <div class="table-scroll short"><table id="opportunity-table"><thead><tr><th>LGA</th><th>Ward</th><th>Score</th><th>Type</th></tr></thead><tbody></tbody></table></div>
+          </div>
+          <div class="mini-panel">
+            <h3>Top battleground wards</h3>
+            <div class="table-scroll short"><table id="battle-table"><thead><tr><th>LGA</th><th>Ward</th><th>Margin %</th><th>Reg.</th></tr></thead><tbody></tbody></table></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid-two">
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h2>LGA performance table</h2>
+            <p class="subtle">Party-color view changes which percentage is highlighted most strongly.</p>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table id="lga-table">
+            <thead>
+              <tr>
+                <th>LGA</th><th>PUs</th><th>Wards</th><th>Registered</th><th>Turnout</th><th>APC %</th><th>LP %</th><th>PDP %</th><th>Lead</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h2>Ward drilldown</h2>
+            <p class="subtle">Select an LGA from the map or filters to inspect the ward-level picture.</p>
+          </div>
+          <div class="filters">
+            <select id="lga-filter"></select>
+            <select id="ward-filter"></select>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table id="ward-table">
+            <thead>
+              <tr>
+                <th>Ward</th><th>PUs</th><th>Registered</th><th>Turnout</th><th>APC</th><th>LP</th><th>PDP</th><th>Lead</th><th>Priority</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <h2>Polling unit drilldown</h2>
+          <p class="subtle">Search within the selected LGA/ward. This is the field-operations layer.</p>
+        </div>
+        <div class="filters">
+          <input id="pu-search" type="text" placeholder="Search polling unit..." />
+        </div>
+      </div>
+      <div class="table-scroll tall">
+        <table id="pu-table">
+          <thead>
+            <tr>
+              <th>Polling Unit</th><th>LGA</th><th>Ward</th><th>Registered</th><th>Turnout</th><th>APC</th><th>LP</th><th>PDP</th><th>Lead</th><th>Margin</th><th>Flag</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>GitHub-ready premium static bundle</span>
+      <span>No backend required</span>
+    </footer>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
